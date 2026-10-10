@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Profile & Rate Card | Abhishek Workforce Solutions</title>
+  <meta name="description" content="Official Company Profile, Service Catalog, and Rate Card for Abhishek Workforce Solutions - Govt MSME Registered Manpower Agency.">
+  <link rel="icon" type="image/png" href="./assets/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <style>
+    body { background-color: #f1f5f9; padding: 2rem 0; }
+    .brochure-paper {
+      background: #ffffff;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(15,23,42,0.1);
+      border: 1px solid #e2e8f0;
+      position: relative;
+    }
+    .print-actions {
+      max-width: 900px;
+      margin: 0 auto 1.5rem auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brochure-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #0b132b;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .reg-stamp {
+      background: #fef3c7;
+      border: 1px solid #f59e0b;
+      color: #78350f;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-align: right;
+    }
+    .brochure-section { margin-bottom: 2rem; }
+    .brochure-section h3 {
+      font-size: 1.25rem;
+      color: #0b132b;
+      border-left: 4px solid #f59e0b;
+      padding-left: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .rate-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .rate-table th, .rate-table td {
+      border: 1px solid #cbd5e1;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+    .rate-table th { background-color: #0b132b; color: #ffffff; }
+    .rate-table tr:nth-child(even) { background-color: #f8fafc; }
+
+    @media print {
+      body { background: #ffffff; padding: 0; }
+      .print-actions, .whatsapp-float-btn { display: none !important; }
+      .brochure-paper { box-shadow: none; border: none; padding: 0; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-actions">
+    <a href="index.html" class="btn btn-outline btn-sm"><i class="fas fa-arrow-left"></i> Back to Website</a>
+    <button onclick="window.print()" class="btn btn-primary"><i class="fas fa-file-pdf"></i> Download / Print PDF</button>
+  </div>
+
+  <div class="brochure-paper">
+    <div class="brochure-header">
+      <div class="logo-brand">
+        <img src="./assets/logo.png" alt="Abhishek Workforce Solutions Logo" class="brand-logo-img" style="height: 60px;">
+        <div class="logo-text-group">
+          <div class="logo-title" style="font-size: 1.5rem;">ABHISHEK <span style="color: #d97706;">WORKFORCE</span></div>
+          <div class="logo-subtitle" style="font-size: 0.75rem;">Manpower & Staffing Solutions</div>
+        </div>
+      </div>
+      <div class="reg-stamp">
+        <div><i class="fas fa-award"></i> Govt MSME Registered</div>
+        <div style="font-size: 0.95rem; color: #0b132b;">UDYAM-UP-10-0044007</div>
+      </div>
+    </div>
+
+    <!-- Company Overview -->
+    <div class="brochure-section">
+      <h3>1. Company Overview & Contact Desk</h3>
+      <p style="font-size: 0.95rem; color: #334155; line-height: 1.6;">
+        <strong>ABHISHEK WORKFORCE SOLUTIONS</strong> is a dedicated manpower supply agency providing verified, disciplined, and hard-working labor for warehouses, 3PL logistics hubs, e-commerce fulfillment centers, and manufacturing units.
+      </p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; font-size: 0.9rem; background: #f8fafc; padding: 1rem; border-radius: 8px;">
+        <div>
+          <p><strong>Helpdesk Hotlines:</strong> +91 9196359955 / +91 7985259352</p>
+          <p><strong>Official Email:</strong> asri.4247@gmail.com</p>
+        </div>
+        <div>
+          <p><strong>Verification:</strong> 100% Aadhaar & Background Checked</p>
+          <p><strong>Operating Model:</strong> 24/7 Shift Supply & On-Site Supervision</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Manpower Services Provided -->
+    <div class="brochure-section">
+      <h3>2. Key Manpower Categories Supplied</h3>
+      <table class="rate-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Role Description</th>
+            <th>Deployment Timeframe</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Warehouse Pickers & Packers</strong></td>
+            <td>Order picking, barcode scanning, boxing, sorting, kitting & packaging.</td>
+            <td>Within 12 - 24 Hours</td>
+          </tr>
+          <tr>
+            <td><strong>Forklift & Reach Truck Drivers</strong></td>
+            <td>Licensed, safety-oriented drivers for pallet movement & stacking.</td>
+            <td>Within 24 Hours</td>
+          </tr>
+          <tr>
+            <td><strong>Container Loading/Unloading Crew</strong></td>
+            <td>Sturdy labor for heavy container turnaround & material handling.</td>
+            <td>Immediate / On-Demand</td>
+          </tr>
+          <tr>
+            <td><strong>Factory Assembly Helpers</strong></td>
+            <td>Machine helpers, raw material loaders, and assembly line workers.</td>
+            <td>Within 24 Hours</td>
+          </tr>
+          <tr>
+            <td><strong>Warehouse Security & Patrol</strong></td>
+            <td>Alert security guards for gate entry logging & asset protection.</td>
+            <td>Within 24 Hours</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Standard Terms & Guarantees -->
+    <div class="brochure-section">
+      <h3>3. Our Service Guarantees & Terms</h3>
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.92rem;">
+        <li><i class="fas fa-check-circle" style="color: #10b981;"></i> <strong>2-Hour Replacement Guarantee:</strong> Standby workers dispatched immediately if any shift worker is absent.</li>
+        <li><i class="fas fa-check-circle" style="color: #10b981;"></i> <strong>Dedicated Site Supervision:</strong> On-site supervisor provided for batches of 15+ workers.</li>
+        <li><i class="fas fa-check-circle" style="color: #10b981;"></i> <strong>100% KYC Verification:</strong> Aadhaar identification verified before site entry.</li>
+        <li><i class="fas fa-check-circle" style="color: #10b981;"></i> <strong>Transparent Direct Payouts:</strong> Wages paid directly via bank transfer ensuring disciplined, motivated staff.</li>
+      </ul>
+    </div>
+
+    <!-- Signoff Stamp -->
+    <div style="margin-top: 3rem; pt-2; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #64748b;">
+      <div>Authorized Signatory — ABHISHEK WORKFORCE SOLUTIONS</div>
+      <div>Govt MSME Reg: UDYAM-UP-10-0044007</div>
+    </div>
+  </div>
+
+</body>
+</html>
