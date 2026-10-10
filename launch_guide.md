@@ -20,7 +20,7 @@ Everything is tested and production-ready in `/dist` for **ABHISHEK WORKFORCE SO
    - **Form 2: Workforce Estimator Form**: Collects customized shift requirements PLUS Client Name and Phone number. Slider badge and headcount dynamically stay in sync.
    - **Form 3: Candidate Job Registration Form**: Collects Full Name (Aadhaar), Mobile Number, Hub Location, Preferred Role, and Experience.
    - **Form 4: Contact Desk Form**: Full inquiry capturing.
-   - **Backend Dispatch**: Form submissions use a free AJAX dispatcher posting directly to **`asri.4247@gmail.com`**.
+   - **Backend Dispatch**: Form submissions use a free AJAX dispatcher posting directly to **`aws.staffing@gmail.com`**.
    - **Confirmation Modal with WhatsApp Quick-Connect**: Upon form submission, users see a branded confirmation dialog with their unique reference ticket (e.g., `AWS-829104` / `JOB-481920`) and a 1-tap **"Chat on WhatsApp Now"** button with their details pre-filled.
 
 4. **SEO & Google Search Discovery**:
@@ -36,10 +36,10 @@ Everything is tested and production-ready in `/dist` for **ABHISHEK WORKFORCE SO
 
 ### 📩 Important: One-Time Form Activation (FormSubmit)
 
-When your live website receives its **first form submission**, **FormSubmit** sends a single verification email to **`asri.4247@gmail.com`**:
+When your live website receives its **first form submission**, **FormSubmit** sends a single verification email to **`aws.staffing@gmail.com`**:
 1. Check your Gmail inbox for an email from FormSubmit.
 2. Click the **"Activate Form"** button once.
-3. From that moment on, every lead submitted on your website is instantly delivered straight to `asri.4247@gmail.com` in a clean summary table with no spam.
+3. From that moment on, every lead submitted on your website is instantly delivered straight to `aws.staffing@gmail.com` in a clean summary table with no spam.
 
 ---
 

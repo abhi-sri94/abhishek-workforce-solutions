@@ -274,8 +274,8 @@ function initFormSubmissions() {
     }
 
     try {
-      // Free serverless email dispatcher directly to asri.4247@gmail.com
-      await fetch('https://formsubmit.co/ajax/asri.4247@gmail.com', {
+      // Free serverless email dispatcher directly to aws.staffing@gmail.com
+      await fetch('https://formsubmit.co/ajax/aws.staffing@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
