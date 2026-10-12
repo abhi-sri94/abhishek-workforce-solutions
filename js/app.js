@@ -13,7 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initIndustryTabs();
   initFormSubmissions();
+  removeNetlifyBadge();
 });
+
+/* Automatically remove Netlify injected badge */
+function removeNetlifyBadge() {
+  const clean = () => {
+    const badge = document.getElementById('nl-badge-frame') || document.querySelector('iframe[title="Powered by Netlify"]');
+    if (badge) badge.remove();
+  };
+  clean();
+  const observer = new MutationObserver(clean);
+  if (document.body) {
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+}
 
 /* Mobile Navigation Toggle & Auto-Close */
 function initMobileNav() {

@@ -1392,3 +1392,19 @@ dialog::backdrop {
     padding: 2.5rem 1.5rem;
   }
 }
+
+/* Suppress Netlify Injected Badge / HUD */
+#nl-badge-frame,
+iframe[title="Powered by Netlify"],
+iframe[id^="nl-"],
+iframe[data-nl-ready] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  bottom: -9999px !important;
+}
