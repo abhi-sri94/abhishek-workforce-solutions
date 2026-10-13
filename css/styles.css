@@ -949,6 +949,162 @@ img {
   color: var(--slate-500);
 }
 
+/* Statutory Compliance & Labor Law Section */
+.statutory-showcase-box {
+  margin-top: 3.5rem;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 2.75rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--slate-200);
+}
+
+.statutory-showcase-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.statutory-showcase-header h3 {
+  font-size: 1.85rem;
+  color: var(--navy-dark);
+  margin-bottom: 0.75rem;
+}
+
+.statutory-showcase-header p {
+  color: var(--slate-600);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.statutory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.25rem;
+}
+
+.statutory-card {
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.statutory-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--amber-primary);
+  box-shadow: var(--shadow-md);
+  background: #ffffff;
+}
+
+.statutory-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.statutory-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(11, 19, 43, 0.08);
+  color: var(--navy-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.statutory-card:hover .statutory-card-icon {
+  background: var(--amber-glow);
+  color: var(--amber-dark);
+}
+
+.statutory-card-info h4 {
+  font-size: 1.2rem;
+  color: var(--navy-dark);
+  margin-bottom: 0.4rem;
+}
+
+.statutory-card-info p {
+  font-size: 0.94rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+}
+
+.statutory-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--slate-200);
+}
+
+.statutory-tag {
+  background: #ffffff;
+  border: 1px solid var(--slate-200);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--navy-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.statutory-tag i {
+  color: var(--emerald-success);
+}
+
+.statutory-acts-bar {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-main) 100%);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 2rem 2.25rem;
+  box-shadow: 0 10px 25px rgba(11, 19, 43, 0.25);
+}
+
+.statutory-acts-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--amber-primary);
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 0.75rem;
+}
+
+.statutory-acts-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem 1.5rem;
+}
+
+.statutory-act-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--slate-200);
+}
+
+.statutory-act-item i {
+  color: var(--emerald-success);
+  font-size: 0.85rem;
+}
+
 /* Industries Tabs / Showcase */
 .industry-tabs-nav {
   display: flex;
@@ -1351,6 +1507,12 @@ dialog::backdrop {
   .industry-image {
     min-height: 260px;
   }
+  .statutory-grid {
+    grid-template-columns: 1fr;
+  }
+  .statutory-acts-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -1390,6 +1552,15 @@ dialog::backdrop {
   }
   .estimator-section {
     padding: 2.5rem 1.5rem;
+  }
+  .statutory-showcase-box {
+    padding: 1.5rem 1.25rem;
+  }
+  .statutory-acts-bar {
+    padding: 1.5rem 1.25rem;
+  }
+  .statutory-acts-list {
+    grid-template-columns: 1fr;
   }
 }
 
