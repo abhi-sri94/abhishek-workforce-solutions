@@ -14,7 +14,36 @@ document.addEventListener('DOMContentLoaded', () => {
   initIndustryTabs();
   initFormSubmissions();
   removeNetlifyBadge();
+  initScrollAnimations();
 });
+
+/* Scroll-Triggered Entrance Animations for Cards */
+function initScrollAnimations() {
+  const cardsToAnimate = document.querySelectorAll(
+    '.statutory-card, .service-card, .stat-item-col, .statutory-acts-bar, .compliance-item'
+  );
+
+  cardsToAnimate.forEach(card => card.classList.add('reveal-card'));
+
+  if (!('IntersectionObserver' in window)) {
+    cardsToAnimate.forEach(card => card.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.1
+  });
+
+  cardsToAnimate.forEach(card => observer.observe(card));
+}
 
 /* Automatically remove Netlify injected badge */
 function removeNetlifyBadge() {
