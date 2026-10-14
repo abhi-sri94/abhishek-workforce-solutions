@@ -450,6 +450,7 @@ section[id] {
 .hero-title span {
   background: linear-gradient(135deg, #fbbf24, #f59e0b);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -602,7 +603,6 @@ section[id] {
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  divide-x: 1px solid var(--slate-200);
   padding: 2rem 1.5rem;
 }
 
@@ -611,6 +611,11 @@ section[id] {
   padding: 0.75rem 1rem;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: var(--radius-sm);
+  border-right: 1px solid var(--slate-200);
+}
+
+.stat-item-col:last-child {
+  border-right: none;
 }
 
 .stat-item-col:hover {
@@ -1722,6 +1727,9 @@ dialog::backdrop {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+  .stat-item-col {
+    border-right: none;
   }
   .estimator-grid, .compliance-grid, .industry-display-card, .comparison-grid, .footer-top {
     grid-template-columns: 1fr;
