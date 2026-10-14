@@ -116,31 +116,44 @@
             </div>
           </a>
 
-          <ul class="nav-links">
-            <li><a href="#home" class="nav-link active">Home</a></li>
-            <li><a href="#about" class="nav-link">About Us</a></li>
-            <li><a href="#services" class="nav-link">Our Services</a></li>
-            <li><a href="#estimator" class="nav-link">Workforce Estimator</a></li>
-            <li><a href="#commitments" class="nav-link">Standards & Compliance</a></li>
-            <li><a href="#industries" class="nav-link">Industries</a></li>
-            <li><a href="#contact" class="nav-link">Contact Us</a></li>
-          </ul>
+          <!-- Navigation Menu Wrapper -->
+          <div class="nav-menu" id="nav-menu">
+            <div class="mobile-menu-header">
+              <span class="mobile-menu-title"><i class="fas fa-bars-staggered"></i> Menu</span>
+              <button class="mobile-menu-close-btn js-close-mobile-nav" aria-label="Close navigation menu">
+                <i class="fas fa-xmark"></i> Close
+              </button>
+            </div>
 
-          <div class="nav-actions">
-            <button class="btn btn-outline btn-sm js-open-apply-modal">
-              <i class="fas fa-user-plus"></i> Join Team
-            </button>
-            <button class="btn btn-primary btn-sm js-open-hire-modal">
-              <i class="fas fa-truck-ramp-box"></i> Hire Manpower
-            </button>
+            <ul class="nav-links">
+              <li><a href="#home" class="nav-link active">Home</a></li>
+              <li><a href="#about" class="nav-link">About Us</a></li>
+              <li><a href="#services" class="nav-link">Our Services</a></li>
+              <li><a href="#estimator" class="nav-link">Workforce Estimator</a></li>
+              <li><a href="#commitments" class="nav-link">Standards & Compliance</a></li>
+              <li><a href="#industries" class="nav-link">Industries</a></li>
+              <li><a href="#contact" class="nav-link">Contact Us</a></li>
+            </ul>
+
+            <div class="nav-actions">
+              <button class="btn btn-outline btn-sm js-open-apply-modal">
+                <i class="fas fa-user-plus"></i> Join Team
+              </button>
+              <button class="btn btn-primary btn-sm js-open-hire-modal">
+                <i class="fas fa-truck-ramp-box"></i> Hire Manpower
+              </button>
+            </div>
           </div>
 
-          <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+          <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
             <i class="fas fa-bars"></i>
           </button>
         </nav>
       </div>
     </div>
+
+    <!-- Backdrop for Mobile Navigation -->
+    <div class="nav-backdrop js-close-mobile-nav" id="nav-backdrop"></div>
   </header>
 
   <!-- Hero Section -->

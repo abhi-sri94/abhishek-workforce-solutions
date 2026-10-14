@@ -131,30 +131,51 @@ function removeNetlifyBadge() {
 function initMobileNav() {
   const toggleBtn = document.querySelector('.mobile-nav-toggle');
   const navContainer = document.querySelector('.site-header');
-  const navLinks = document.querySelectorAll('.nav-links .nav-link, .nav-actions button');
+  const closeTriggers = document.querySelectorAll(
+    '.js-close-mobile-nav, .nav-links .nav-link, .nav-actions button'
+  );
 
-  if (toggleBtn && navContainer) {
-    toggleBtn.addEventListener('click', () => {
-      navContainer.classList.toggle('mobile-menu-active');
-      const icon = toggleBtn.querySelector('i');
+  if (!toggleBtn || !navContainer) return;
+
+  const setMenuState = (isOpen) => {
+    const icon = toggleBtn.querySelector('i');
+    if (isOpen) {
+      navContainer.classList.add('mobile-menu-active');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      toggleBtn.setAttribute('aria-label', 'Close navigation menu');
       if (icon) {
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
+        icon.className = 'fas fa-xmark';
       }
-    });
+      document.body.classList.add('nav-open-lock');
+    } else {
+      navContainer.classList.remove('mobile-menu-active');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.setAttribute('aria-label', 'Open navigation menu');
+      if (icon) {
+        icon.className = 'fas fa-bars';
+      }
+      document.body.classList.remove('nav-open-lock');
+    }
+  };
 
-    // Auto-close menu when tapping any navigation item
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navContainer.classList.remove('mobile-menu-active');
-        const icon = toggleBtn.querySelector('i');
-        if (icon) {
-          icon.classList.add('fa-bars');
-          icon.classList.remove('fa-times');
-        }
-      });
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isCurrentlyOpen = navContainer.classList.contains('mobile-menu-active');
+    setMenuState(!isCurrentlyOpen);
+  });
+
+  closeTriggers.forEach(el => {
+    el.addEventListener('click', () => {
+      setMenuState(false);
     });
-  }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navContainer.classList.contains('mobile-menu-active')) {
+      setMenuState(false);
+    }
+  });
 }
 
 /* Interactive Manpower Cost & Headcount Estimator */
