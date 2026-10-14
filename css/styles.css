@@ -271,10 +271,6 @@ img {
   gap: 1rem;
 }
 
-.mobile-menu-header {
-  display: none;
-}
-
 .nav-backdrop {
   display: none;
 }
@@ -1867,46 +1863,6 @@ dialog::backdrop {
       opacity: 1;
       transform: translateY(0);
     }
-  }
-
-  /* Header inside mobile menu with explicit Close button */
-  .mobile-menu-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 0.75rem;
-    margin-bottom: 0.75rem;
-    border-bottom: 1px solid var(--slate-200);
-  }
-
-  .mobile-menu-title {
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--slate-500);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .mobile-menu-close-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.4rem 0.8rem;
-    background: #fee2e2;
-    color: #dc2626;
-    border: 1px solid #fca5a5;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.2s ease;
-  }
-
-  .mobile-menu-close-btn:hover {
-    background: #fecaca;
   }
 
   .mobile-menu-active .nav-links {
