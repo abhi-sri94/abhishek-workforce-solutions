@@ -23,13 +23,13 @@ function initSmartNavbar() {
   const header = document.querySelector('.site-header');
   if (!header) return;
 
-  let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+  let lastScrollY = Math.max(0, window.pageYOffset || document.documentElement.scrollTop);
   let isTicking = false;
-  const scrollThreshold = 8; // minimal delta in px to prevent micro-flickering
-  const topSafeOffset = 70; // safe zone near the top of the page
+  const scrollThreshold = 5; // minimal delta in px to prevent micro-flickering
+  const topSafeOffset = 30; // near the top of the page
 
   const updateNavbar = () => {
-    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    const currentScrollY = Math.max(0, window.pageYOffset || document.documentElement.scrollTop);
 
     // Never hide when mobile menu dropdown is open
     if (header.classList.contains('mobile-menu-active')) {
@@ -39,7 +39,7 @@ function initSmartNavbar() {
       return;
     }
 
-    // Always keep visible when at or near top of the page
+    // When at the very top of the page, show standard unpinned header
     if (currentScrollY <= topSafeOffset) {
       header.classList.remove('header-hidden');
       header.classList.remove('header-pinned');
@@ -50,14 +50,14 @@ function initSmartNavbar() {
 
     const diff = currentScrollY - lastScrollY;
 
-    // Trigger state change only when user scrolls beyond threshold
+    // Trigger state change whenever user scrolls beyond threshold
     if (Math.abs(diff) >= scrollThreshold) {
       if (diff > 0) {
         // Scrolling DOWN -> Hide navbar smoothly out of view
         header.classList.add('header-hidden');
         header.classList.remove('header-pinned');
       } else {
-        // Scrolling UP -> Reveal floating navbar with elevated blur & shadow
+        // Scrolling UP -> Reveal floating white navbar with elevated blur & shadow
         header.classList.remove('header-hidden');
         header.classList.add('header-pinned');
       }
@@ -73,6 +73,17 @@ function initSmartNavbar() {
       isTicking = true;
     }
   }, { passive: true });
+
+  // When clicking any navigation link, ensure floating navbar is visible
+  const navLinks = document.querySelectorAll('.nav-links a, .nav-actions button');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      setTimeout(() => {
+        header.classList.remove('header-hidden');
+        header.classList.add('header-pinned');
+      }, 300);
+    });
+  });
 }
 
 /* Scroll-Triggered Entrance Animations for Cards */

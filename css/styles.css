@@ -158,31 +158,42 @@ img {
 
 /* Header & Navbar */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.navbar-wrapper {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--slate-200);
   box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.3s ease,
-              background 0.3s ease;
-  will-change: transform;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hidden state when scrolling downwards */
 .site-header.header-hidden {
   transform: translateY(-100%);
-  box-shadow: none;
 }
 
 /* Floating / pinned state when scrolling upwards */
 .site-header.header-pinned {
   transform: translateY(0);
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+}
+
+/* When pinned and floating during upward scroll, keep announcement bar hidden so ONLY the white navbar floats */
+.site-header.header-pinned .announcement-bar {
+  display: none;
+}
+
+.site-header.header-pinned .navbar-wrapper {
   background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
 }
 
 .site-header.mobile-menu-active {
@@ -358,12 +369,17 @@ img {
   cursor: pointer;
 }
 
+/* Section Anchor Offset for Fixed Header */
+section[id] {
+  scroll-margin-top: 85px;
+}
+
 /* Hero Section */
 .hero-section {
   position: relative;
   background: linear-gradient(145deg, #091024 0%, var(--navy-dark) 50%, #151d38 100%);
   color: #ffffff;
-  padding: 5rem 0 6rem 0;
+  padding: 9.5rem 0 6rem 0;
   overflow: hidden;
 }
 
@@ -1732,7 +1748,15 @@ dialog::backdrop {
   }
 
   .site-header {
-    padding: 0.75rem 0;
+    padding: 0;
+  }
+
+  .navbar-wrapper {
+    padding: 0.35rem 0;
+  }
+
+  .navbar {
+    height: 58px;
   }
 
   .brand-logo-img {
@@ -1765,7 +1789,7 @@ dialog::backdrop {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 65px;
+    top: 100%;
     left: 0;
     width: 100%;
     background: #ffffff;
@@ -1788,7 +1812,7 @@ dialog::backdrop {
 
   /* Compact Hero on Mobile */
   .hero-section {
-    padding: 2.25rem 0 2rem 0;
+    padding: 5.5rem 0 2rem 0;
   }
 
   .hero-badge {
