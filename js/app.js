@@ -9,6 +9,7 @@ import logoImg from '../assets/logo.png';
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
+  initSmartNavbar();
   initEstimator();
   initModals();
   initIndustryTabs();
@@ -16,6 +17,63 @@ document.addEventListener('DOMContentLoaded', () => {
   removeNetlifyBadge();
   initScrollAnimations();
 });
+
+/* Smart Auto-Hiding Navbar (Hides on scroll down, reveals on floating scroll up) */
+function initSmartNavbar() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+  let isTicking = false;
+  const scrollThreshold = 8; // minimal delta in px to prevent micro-flickering
+  const topSafeOffset = 70; // safe zone near the top of the page
+
+  const updateNavbar = () => {
+    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Never hide when mobile menu dropdown is open
+    if (header.classList.contains('mobile-menu-active')) {
+      header.classList.remove('header-hidden');
+      lastScrollY = currentScrollY;
+      isTicking = false;
+      return;
+    }
+
+    // Always keep visible when at or near top of the page
+    if (currentScrollY <= topSafeOffset) {
+      header.classList.remove('header-hidden');
+      header.classList.remove('header-pinned');
+      lastScrollY = currentScrollY;
+      isTicking = false;
+      return;
+    }
+
+    const diff = currentScrollY - lastScrollY;
+
+    // Trigger state change only when user scrolls beyond threshold
+    if (Math.abs(diff) >= scrollThreshold) {
+      if (diff > 0) {
+        // Scrolling DOWN -> Hide navbar smoothly out of view
+        header.classList.add('header-hidden');
+        header.classList.remove('header-pinned');
+      } else {
+        // Scrolling UP -> Reveal floating navbar with elevated blur & shadow
+        header.classList.remove('header-hidden');
+        header.classList.add('header-pinned');
+      }
+      lastScrollY = currentScrollY;
+    }
+
+    isTicking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!isTicking) {
+      window.requestAnimationFrame(updateNavbar);
+      isTicking = true;
+    }
+  }, { passive: true });
+}
 
 /* Scroll-Triggered Entrance Animations for Cards */
 function initScrollAnimations() {
